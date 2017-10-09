@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/google_settings_app_color_primary</color>
+    <color name="colorPrimaryDark">@color/google_settings_app_color_primary_dark</color>
+    <color name="colorAccent">#FFC107</color>
+
+    <color name="google_settings_app_color_primary">#293238</color>
+    <color name="google_settings_app_color_primary_dark">#23272b</color>
+
+</resources>
