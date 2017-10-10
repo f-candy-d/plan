@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="360dp">
+
+    <include
+        android:id="@+id/side_stepper"
+        layout="@layout/comp_side_stepper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+    android:layout_toRightOf="@+id/side_stepper"
+    android:layout_toEndOf="@id/side_stepper"
+    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/stepper_title"
+            android:textColor="@color/stepper_title_active"
+            android:layout_marginBottom="@dimen/stepper_title_bottom_margin"
+            android:text="Select an app"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/stepper_sub_title"
+            android:textColor="@color/stepper_sub_title_active"
+            android:layout_marginBottom="@dimen/stepper_sub_title_bottom_margin"
+            android:text="Summary if needed..."/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="48dp"
+            android:nestedScrollingEnabled="false"
+            android:id="@+id/comment_list"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

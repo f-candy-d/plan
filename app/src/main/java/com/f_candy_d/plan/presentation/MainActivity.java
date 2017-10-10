@@ -1,5 +1,6 @@
 package com.f_candy_d.plan.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,9 +19,12 @@ import com.f_candy_d.plan.R;
 import com.f_candy_d.plan.data.model.Plan;
 import com.f_candy_d.plan.data.source.Repository;
 import com.f_candy_d.plan.presentation.view.HomeFragment;
+import com.f_candy_d.plan.presentation.view.PlanDetailsActivity;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements
+        NavigationView.OnNavigationItemSelectedListener,
+        HomeFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,5 +117,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onShowPlanDetailsUi(Plan plan) {
+        Intent intent = new Intent(this, PlanDetailsActivity.class);
+        startActivity(intent);
     }
 }

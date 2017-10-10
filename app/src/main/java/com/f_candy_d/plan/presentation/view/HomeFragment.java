@@ -1,6 +1,7 @@
 package com.f_candy_d.plan.presentation.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.f_candy_d.plan.R;
+import com.f_candy_d.plan.data.model.Plan;
 import com.f_candy_d.plan.presentation.component.PlanAdapter;
+import com.f_candy_d.plan.presentation.utils.ItemClickHelper;
 
 public class HomeFragment extends Fragment {
 
@@ -47,6 +50,22 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(new PlanAdapter());
 
+        // # ItemClickHelper
+
+        ItemClickHelper<PlanAdapter.PlanViewHolder> itemClickHelper = new ItemClickHelper<>(
+                new ItemClickHelper.Callback<PlanAdapter.PlanViewHolder>() {
+            @Override
+            public void onItemClick(PlanAdapter.PlanViewHolder viewHolder) {
+                mListener.onShowPlanDetailsUi(null);
+            }
+
+            @Override
+            public void onItemLongClick(PlanAdapter.PlanViewHolder viewHolder) {
+                // Nothing to do...
+            }
+        });
+        itemClickHelper.attachToRecyclerView(recyclerView);
+
         return view;
     }
 
@@ -56,8 +75,8 @@ public class HomeFragment extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
         }
     }
 
@@ -78,7 +97,6 @@ public class HomeFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onShowPlanDetailsUi(Plan plan);
     }
 }

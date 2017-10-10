@@ -41,7 +41,7 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
         return 15;
     }
 
-    static class PlanViewHolder extends RecyclerView.ViewHolder {
+    public static class PlanViewHolder extends RecyclerView.ViewHolder {
 
         PlanViewHolder(View view) {
             super(view);
