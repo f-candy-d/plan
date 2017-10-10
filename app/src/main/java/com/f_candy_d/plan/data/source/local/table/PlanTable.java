@@ -13,8 +13,6 @@ public final class PlanTable extends BaseTable {
 
     private PlanTable() {}
 
-    public static final String TABLE_NAME = Plan.MODEL_NAME;
-
     /**
      * COLUMNS
      * ----------------------------------------------------------------------------- */
@@ -26,7 +24,7 @@ public final class PlanTable extends BaseTable {
      * ----------------------------------------------------------------------------- */
 
     public static TableUtils.TableSource getTableSource() {
-        return getBaseTableSource(TABLE_NAME)
+        return getBaseTableSource(Plan.MODEL_NAME)
                 .put(_TITLE, ColumnDataType.TEXT);
     }
 }

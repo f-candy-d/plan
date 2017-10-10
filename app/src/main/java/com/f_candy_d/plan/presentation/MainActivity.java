@@ -1,4 +1,4 @@
-package com.f_candy_d.plan;
+package com.f_candy_d.plan.presentation;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,27 +14,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.f_candy_d.plan.R;
 import com.f_candy_d.plan.data.model.Plan;
 import com.f_candy_d.plan.data.source.Repository;
+import com.f_candy_d.plan.presentation.view.HomeFragment;
 
-public class HomeActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -54,6 +47,14 @@ public class HomeActivity extends AppCompatActivity
             Log.d("mylog", "loaded plan's title -> " + plan.getTitle());
         } else {
             Log.d("mylog", "failed to load plan model...");
+        }
+
+        // TODO; Initial screen
+        HomeFragment fragment = (HomeFragment) getSupportFragmentManager().findFragmentByTag("home_screen");
+        if (fragment == null) {
+            fragment = new HomeFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container, fragment, "home_screen").commit();
         }
     }
 
