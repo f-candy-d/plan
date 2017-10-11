@@ -16,7 +16,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
     @Override
     public CommentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_comment, parent, false);
+                .inflate(R.layout.work_card_comment_item_view, parent, false);
 
         return new CommentViewHolder(view);
     }
@@ -27,7 +27,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
     @Override
     public int getItemCount() {
-        return 6;
+        return 2;
     }
 
     static class CommentViewHolder extends RecyclerView.ViewHolder {

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/work_card_bottom_margin"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/stepper_circle"
+        android:layout_width="@dimen/work_card_stepper_circle_size"
+        android:layout_height="@dimen/work_card_stepper_circle_size"
+        android:layout_marginTop="@dimen/work_card_stepper_circle_margin_top"
+        android:layout_marginLeft="@dimen/work_card_stepper_left_margin"
+        android:layout_marginStart="@dimen/work_card_stepper_left_margin"
+        android:layout_marginRight="@dimen/work_card_stepper_right_margin"
+        android:layout_marginEnd="@dimen/work_card_stepper_right_margin"
+        android:backgroundTint="@color/work_card_stepper_circle_active_color"
+        android:gravity="center"
+        android:text="０"
+        android:textSize="@dimen/work_card_stepper_circle_text_size"
+        android:textColor="@color/work_card_stepper_circle_text"
+        android:background="@drawable/stepper_circle_bg"/>
+
+    <TextView
+        android:id="@+id/work_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_toRightOf="@+id/stepper_circle"
+        android:layout_toEndOf="@id/stepper_circle"
+        android:textSize="@dimen/work_card_stepper_title"
+        android:textColor="@color/work_card_stepper_title_active"
+        android:layout_marginBottom="@dimen/work_card_stepper_title_bottom_margin"
+        android:text="Select an app"/>
+
+    <TextView
+        android:id="@+id/work_sub_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/stepper_circle"
+        android:layout_toEndOf="@id/stepper_circle"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_below="@+id/work_title"
+        android:textSize="@dimen/work_card_stepper_sub_title"
+        android:textColor="@color/work_card_stepper_sub_title_active"
+        android:layout_marginBottom="@dimen/work_card_stepper_sub_title_bottom_margin"
+        android:text="Summary if needed..."/>
+
+    <LinearLayout
+        android:id="@+id/comments_container"
+        android:layout_toRightOf="@+id/stepper_circle"
+        android:layout_toEndOf="@id/stepper_circle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_below="@+id/work_sub_title"
+        android:orientation="vertical"/>
+
+    <Button
+        android:id="@+id/show_more_comment_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comments_container"
+        android:layout_toEndOf="@+id/stepper_circle"
+        android:layout_toRightOf="@id/stepper_circle"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:text="more"
+        android:layout_marginBottom="@dimen/work_card_show_more_comment_button_bottom_margin"/>
+
+    <Button
+        android:id="@+id/collapse_comments_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comments_container"
+        android:layout_toEndOf="@+id/show_more_comment_button"
+        android:layout_toRightOf="@id/show_more_comment_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:textColor="@color/work_card_collapse_button_text"
+        android:text="collapse"
+        android:layout_marginBottom="@dimen/work_card_show_more_comment_button_bottom_margin"/>
+
+</RelativeLayout>

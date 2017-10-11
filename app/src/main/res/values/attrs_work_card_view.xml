@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="WorkCardView">
+        <attr name="maxCommentsCount" format="integer"/>
+        <attr name="title" format="string"/>
+        <attr name="subTitle" format="string"/>
+        <attr name="stepNumber" format="integer"/>
+    </declare-styleable>
+</resources>

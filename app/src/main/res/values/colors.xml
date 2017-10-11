@@ -7,13 +7,16 @@
     <color name="google_settings_app_color_primary">#293238</color>
     <color name="google_settings_app_color_primary_dark">#23272b</color>
 
-    <color name="stepper_connector_line">#BDBDBD</color>
-    <color name="stepper_inactive_circle_bg">#616161</color>
-    <color name="stepper_circle_text">#FFFFFF</color>
+    <color name="work_card_stepper_connector_line">#BDBDBD</color>
+    <color name="work_card_stepper_circle_active_color">@color/colorAccent</color>
+    <color name="work_card_stepper_circle_inactive_color">#616161</color>
+    <color name="work_card_stepper_circle_text">#FFFFFF</color>
 
-    <color name="stepper_title_active">#212121</color>
-    <color name="stepper_sub_title_active">#555555</color>
-    <color name="stepper_title_inactive">#616161</color>
-    <color name="stepper_sub_title_inactive">#949494</color>
+    <color name="work_card_stepper_title_active">#212121</color>
+    <color name="work_card_stepper_sub_title_active">#555555</color>
+    <color name="work_card_stepper_title_inactive">#616161</color>
+    <color name="work_card_stepper_sub_title_inactive">#949494</color>
+
+    <color name="work_card_collapse_button_text">#616161</color>
 
 </resources>
